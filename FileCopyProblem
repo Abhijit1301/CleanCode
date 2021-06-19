@@ -1,0 +1,46 @@
+// pseudocode
+class FileCloner
+{
+        ...
+    copy(string src, string dest) = 0;
+        ...
+};
+     
+class FolderCloner: public FileCloner
+{
+        ...
+    copy(string src, string dest)
+    {
+        // logic for cloning entire directory sub tree.
+    }
+        ...
+}
+     
+class SimpleFileCloner: public FileCloner
+{
+         ...
+    copy(string src, string dest)
+    {
+        // logic for cloning a file
+    }
+         ...
+}
+
+bool FileUtilility::isDirectory(string path)
+{
+    // logic to determine if the path points to Directory
+}
+     
+// driver code
+string src = getSourcePath();
+string dest = getDestinationPath();
+FileUtilility util;
+if (util.isDirectory(src))
+{
+    FileCloner* cloner = new FolderCloner();
+}
+else
+{
+    FileCloner* cloner = new SimpleFileCloner();
+}
+cloner->copy(src,dest);
