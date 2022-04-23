@@ -44,3 +44,5 @@ else
     FileCloner* cloner = new SimpleFileCloner();
 }
 cloner->copy(src,dest);
+
+// Adding a different comment to cause conflict.
